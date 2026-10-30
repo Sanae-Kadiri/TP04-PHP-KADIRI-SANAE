@@ -4,29 +4,29 @@ class Personne {
     private string $prenom = "";
     private string $dateNaissance = "";
 
-    public function _set(string $name, mixed $value): void {
+    public function __set(string $name, mixed $value): void {
         if (!property_exists($this, $name)) {
             echo "Propriete $name inexistante" . PHP_EOL;
             return;
         }
-        if ($name == "nom" && strln($value) < 2) {
-            throw new InvalideArgumentsExxception("Le nom doit contenir au moins 2 caracteres");
+        if ($name == "nom" && strlen($value) < 2) {
+            throw new InvalidArgumentException("Le nom doit contenir au moins 2 caracteres");
         }
         $this->$name = $value;
     }
 
-    public function _get(string $name): mixed {
+    public function __get(string $name): mixed {
         if (property_exists($this,$name)) {
             return $this->$name;
         }
         return null;
     }
 
-    public function _isset(string $name): bool {
+    public function __isset(string $name): bool {
         return property_exists($this, $name) && $this->$name !== "";
     }
 
-    public function _unset(string $name): void {
+    public function __unset(string $name): void {
         if (property_exists($this,$name)) {
             $this->$name = "";
         }
@@ -42,6 +42,6 @@ $p->telephone = "0600000000";
 
 try {
     $p->nom = "A";
-} catch (InvalidArgumentsException $e) {
+} catch (InvalidArgumentException $e) {
     echo "Erreur : " . $e->getMessage() . PHP_EOL;
 }
