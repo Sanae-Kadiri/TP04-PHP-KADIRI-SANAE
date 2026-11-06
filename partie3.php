@@ -27,7 +27,7 @@ class Personne {
     }
 
     public function __unset(string $name): void {
-        if (property_exists($this,$name)) {
+        if (property_exists($this,$name)) { 
             $this->$name = "";
         }
     }

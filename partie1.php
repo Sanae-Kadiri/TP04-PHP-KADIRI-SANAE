@@ -13,7 +13,6 @@ class Personne {
         $this->villeNaissance = $villeNaissance;
         $this->cin = $cin;
 }
-
 public function getName(): string {
     return $this->prenom . " " . $this->nom;
 }
