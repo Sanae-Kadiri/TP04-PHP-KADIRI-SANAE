@@ -21,7 +21,7 @@ class Personne {
     }
 
     public function __toString(): string {
-        return $this->prenom . " " . $this->nom . " (" . $this->getSAge() . "ans)";
+        return $this->prenom . " " . $this->nom . " (" . $this->getAge() . "ans)";
     }
 
 }

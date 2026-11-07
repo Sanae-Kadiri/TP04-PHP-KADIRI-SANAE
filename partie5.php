@@ -27,7 +27,7 @@ class Utilisateur {
 }
 
 $u = new Utilisateur("Alice", 25, "secret123");
-$serialise = serialise($u);
+$serialise = serialize($u);
 echo "Sérialisé : $serialise" . PHP_EOL;
 
 $restaure = unserialize($serialise);

@@ -46,12 +46,12 @@ echo $e->presentation() . PHP_EOL;
 
 class Base {
     final public function afficher(): void {
-        echo "Méthode finale"n . PHP_EOL;
+        echo "Méthode finale" . PHP_EOL;
     }
 }
 
 final class Outil {
-    public const VERSION = "1.0"
+    public const VERSION = "1.0";
 }
 
 class Produit {
